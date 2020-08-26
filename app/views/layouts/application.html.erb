@@ -8,8 +8,51 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <div class ="container">
+      <div class ="header-left">
+        <h2> BOOKERS 3</h2>
+      </div>
+      <div class ="header-right">
+        <ul>
+           <% if user_signed_in? %>
+                  <li><%= link_to user_path(current_user.id), class: "header-list" do %>
+                        <span></span>HOME
+                      <% end %>
+                  </li>
+                  <li><%= link_to users_path, class: "header-list" do %>
+                      <span></span>USERS
+                      <% end %>
+                  </li>
+                  <li><%= link_to books_path, class: "header-list" do %>
+                        <span></span>BOOKS
+                      <% end %>
+                  </li>
+                  <li><%= link_to root_path, method: :delete ,class: "header-list" do %>
+                        <span></span>LOG OUT
+                      <% end %>
+                  </li>
+            <% else %>
+                  <li><%= link_to root_path, class: "header-list" do %>
+                        <span></span>HOME
+                      <% end %>
+                  </li>
+                  <li><%= link_to home_about_path, class: "header-list" do %>
+                        <span></span>ABOUT
+                      <% end %>
+                  </li>
+                  <li><%= link_to new_user_session_path,class: "header-list" do %>
+                        <span></span>SIGN IN
+                      <% end %>
+                  </li>
+                  <li><%= link_to new_user_registration_path,class: "header-list" do %>
+                        <span></span>SIGN UP
+                      <% end %>
+                  </li>
+            <% end %>
+        </ul>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
