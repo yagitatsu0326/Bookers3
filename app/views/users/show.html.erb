@@ -1,7 +1,28 @@
 <div class ="container">
-	いい旅ゆめ気分
 	<row>
-		<div class ="col-xs-5"></div>
-		<div class ="col-xs-7"></div>
+		<div class ="col-xs-5">
+			<%= render "layouts/partial", {user_info: @user_info, book_new: @book_new } %>
+		</div>
+		<div class ="col-xs-7">
+			<h2>BOOKS</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>IMAGE</th>
+						<th>TITLE</th>
+						<th>OPINION</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @book.each do |book| %>
+					<tr>
+						<td>IMAGE</td>
+						<td><%= book.title %>iiiii</td>
+						<td><%= book.body %>どうして----</td>
+					</tr>
+				 	<% end %>
+				</tbody>
+			</table>
+		</div>
 	</row>
 </div>

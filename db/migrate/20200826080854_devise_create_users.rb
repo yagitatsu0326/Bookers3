@@ -35,7 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       #カラム追加
       t.string :name
       t.text :introduction
-      t.string :profile_image_id
+      t.text :profile_image_id
 
 
       t.timestamps null: false

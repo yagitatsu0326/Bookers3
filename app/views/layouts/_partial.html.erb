@@ -1,0 +1,40 @@
+
+<h2>USER INFO</h2>
+
+<table>
+	<tbody>
+		<tr>
+			<th>NAME</th>
+			<th><%= user_info.name %></th>
+		</tr>
+		<tr>
+			<th>INTRODUCTION</th>
+			<th><%= user_info.introduction %></th>
+		</tr>
+	</tbody>
+</table>
+<p>
+	<%= link_to edit_user_path, class: "edit-btn" do%>
+		<span>ユーザ編集</span>
+	<% end %>
+</p>
+<h2>NEW BOOKS</h2>
+<%= form_for(book_new) do |f| %>
+	<row>
+		<div class ="col-xs-12">
+			<p>TITLE</p>
+			<%= f.text_field :title %>
+			<p>OPNION</p>
+			<%= f.text_area :body %>
+		</div>
+	</row>
+<% end %>
+<row>
+	<div class ="col-xs-12">
+		<%= link_to 'CREATE BOOK', book_path(current_user.id), class: "create-btn" %>
+	</div>
+</row>
+
+
+
+
