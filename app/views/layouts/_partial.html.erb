@@ -5,21 +5,21 @@
 	<tbody>
 		<tr>
 			<th>NAME</th>
-			<th><%= user_info.name %></th>
+			<th><%= user.name %></th>
 		</tr>
 		<tr>
 			<th>INTRODUCTION</th>
-			<th><%= user_info.introduction %></th>
+			<th><%= user.introduction %></th>
 		</tr>
 	</tbody>
 </table>
 <p>
-	<%= link_to edit_user_path, class: "edit-btn" do%>
+	<%= link_to edit_user_path(user.id), class: "edit-btn" do%>
 		<span>ユーザ編集</span>
 	<% end %>
 </p>
 <h2>NEW BOOKS</h2>
-<%= form_for(book_new) do |f| %>
+<%= form_for(book) do |f| %>
 	<row>
 		<div class ="col-xs-12">
 			<p>TITLE</p>
@@ -28,12 +28,13 @@
 			<%= f.text_area :body %>
 		</div>
 	</row>
+	<row>
+		<div class ="col-xs-12">
+			<%= f.submit "CREATE BOOK" %>
+		</div>
+	</row>
+	<row>
 <% end %>
-<row>
-	<div class ="col-xs-12">
-		<%= link_to 'CREATE BOOK', book_path(current_user.id), class: "create-btn" %>
-	</div>
-</row>
 
 
 

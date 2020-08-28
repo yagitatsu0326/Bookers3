@@ -1,8 +1,28 @@
 <div class ="container">
+	<%= flash[:create] %>
+	<%= flash[:update] %>
 	<row>
 		<div class ="col-xs-5">
-			
+			<%= render "layouts/partial", {user: @user, book: @book } %>
 		</div>
-		<div class ="col-xs-7"></div>
+		<div class ="col-xs-7">
+			<h2>BOOK DETAIL</h2>
+			<table>
+				<thead>
+					<th>IMAGE</th>
+					<th>TITLE</th>
+					<th>OPINION</th>
+					<th></th>
+					<th></th>
+				</thead>
+				<tbody>
+					<td>image</td>
+					<td><%= @books.title %></td>
+					<td><%= @books.body%></td>
+					<td><%= link_to "EDIT",  edit_book_path(@books.id), class: "edit-btn" %> </td>
+					<td><%= link_to "DELETE", book_path, method: :delete, class: "delete-btn", "deta-confilm" => "いっぱいお茶でもどうですか" %></td>
+				</tbody>
+			</table>
+		</div>
 	</row>
 </div>

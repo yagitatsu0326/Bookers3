@@ -1,8 +1,28 @@
 <div class ="container">
 	<row>
 		<div class ="col-xs-5">
-			
+			<%= render "layouts/partial", {user: @user, book: @book } %>
 		</div>
-		<div class ="col-xs-7"></div>
+		<div class ="col-xs-7">
+			<h2>USERS</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>IMAGE</th>
+						<th>NAME</th>
+						<th></th>
+					</tr>
+				</thead>
+				<% @users.each do |user| %>
+					<tbody>
+						<tr>
+							<td>image</td>
+							<td><%= user.name %></td>
+							<td><a href = "/users/<%= user.id %>">SHOW</a></td>
+						</tr>
+					</tbody>
+				<% end %>
+			</table>
+		</div>
 	</row>
 </div>

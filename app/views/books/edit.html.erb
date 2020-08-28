@@ -1,0 +1,19 @@
+<div class ="container">
+	<row>
+		<div class ="col-xs-offset-3 col-xs-6">
+			<h2>EDITING BOOK</h2>
+			<%= form_for(@book) do |f| %>
+				<row>
+					<div class ="col-xs-12">
+						<p>TITLE</p>
+						<%= f.text_field :title %>
+						<p>OPINION</p>
+						<%= f.text_area :body %>
+						<P><%= f.submit "BOOK UPDATE", class: "update-btn" %></P>
+				
+					</div>
+				</row>
+			<% end %>
+		</div>
+	</row>
+</div>

@@ -10,23 +10,32 @@ class BooksController < ApplicationController
 			flash[:create] ="いい投稿作りましたね!!"
 			redirect_to book_path(@book.id)
 		else
-			@user_info =User.find(params[:id])
-			@book_new =Book.new
-			render :show
+			@user = current_user
+			@books = Book.all
+			render :index
 		end
 	end
 	def show
-
-		@user_info =User.find(params[:id])
-		@book_new =Book.new
+		@book = Book.new
+		@books = Book.find(params[:id])
+		@user = @books.user
 	end
 	def index
-		#@user_info =User.find(params[:id])
-		#@book_new =Book.new
+		@user = current_user
+		@book = Book.new
+		@books = Book.all
 	end
 	def edit
+		@book = Book.find(params[:id])
 	end
 	def update
+		@book = Book.find(params[:id])
+		if @book.update(book_params)
+		   flash[:update] ="投稿更新しましたよ!!"
+		   redirect_to book_path(@book.id)
+		else
+			render :edit
+		end
 	end
 	private
 	def book_params
