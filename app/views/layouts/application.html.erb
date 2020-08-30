@@ -9,50 +9,59 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div class ="container">
-      <div class ="header-left">
-        <h2> BOOKERS 3</h2>
-      </div>
-      <div class ="header-right">
-        <ul>
-           <% if user_signed_in? %>
-                  <li><%= link_to user_path(current_user.id), class: "header-list" do %>
-                        <span></span>HOME
-                      <% end %>
-                  </li>
-                  <li><%= link_to users_path, class: "header-list" do %>
-                      <span></span>USERS
-                      <% end %>
-                  </li>
-                  <li><%= link_to books_path, class: "header-list" do %>
-                        <span></span>BOOKS
-                      <% end %>
-                  </li>
-                  <li><%= link_to  destroy_user_session_path, method: :delete ,class: "header-list" do %>
-                        <span></span>LOG OUT
-                      <% end %>
-                  </li>
-            <% else %>
-                  <li><%= link_to root_path, class: "header-list" do %>
-                        <span></span>HOME
-                      <% end %>
-                  </li>
-                  <li><%= link_to home_about_path, class: "header-list" do %>
-                        <span></span>ABOUT
-                      <% end %>
-                  </li>
-                  <li><%= link_to new_user_session_path,class: "header-list" do %>
-                        <span></span>SIGN IN
-                      <% end %>
-                  </li>
-                  <li><%= link_to new_user_registration_path,class: "header-list" do %>
-                        <span></span>SIGN UP
-                      <% end %>
-                  </li>
-            <% end %>
-        </ul>
+    <div class ="header">
+      <div class ="container">
+        <div class ="header-left">
+          <div class ="header-logo">
+            <h2> BOOKERS 3</h2>
+          </div>
+        </div>
+        <nav>
+          <ul class ="header-right">
+             <% if user_signed_in? %>
+                    <li><%= link_to user_path(current_user.id), class: "header-list" do %>
+                          <span></span>Home
+                        <% end %>
+                    </li>
+                    <li><%= link_to users_path, class: "header-list" do %>
+                        <span></span>Users
+                        <% end %>
+                    </li>
+                    <li><%= link_to books_path, class: "header-list" do %>
+                          <span></span>Books
+                        <% end %>
+                    </li>
+                    <li><%= link_to  destroy_user_session_path, method: :delete ,class: "header-list" do %>
+                          <span></span>Log out
+                        <% end %>
+                    </li>
+              <% else %>
+                    <li><%= link_to root_path, class: "header-list" do %>
+                          <span></span>Home
+                        <% end %>
+                    </li>
+                    <li><%= link_to home_about_path, class: "header-list" do %>
+                          <span></span>About
+                        <% end %>
+                    </li>
+                    <li><%= link_to new_user_session_path,class: "header-list" do %>
+                          <span></span>Sign in
+                        <% end %>
+                    </li>
+                    <li><%= link_to new_user_registration_path,class: "header-list" do %>
+                          <span></span>Sign up
+                        <% end %>
+                    </li>
+              <% end %>
+          </ul>
+        </nav>
       </div>
     </div>
     <%= yield %>
+    <footer>
+      <div class ="container">
+        <p class ="footer-logo">CopyRight Infratop.inc</p>
+      </div>
+    </footer>
   </body>
 </html>

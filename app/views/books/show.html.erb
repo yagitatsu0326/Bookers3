@@ -2,25 +2,27 @@
 	<%= flash[:create] %>
 	<%= flash[:update] %>
 	<row>
-		<div class ="col-xs-5">
+		<div class ="col-xs-3">
 			<%= render "layouts/partial", {user: @user, book: @book } %>
 		</div>
-		<div class ="col-xs-7">
-			<h2>BOOK DETAIL</h2>
+		<div class ="col-xs-9">
+			<h2>Book detail</h2>
 			<table>
 				<thead>
-					<th>IMAGE</th>
-					<th>TITLE</th>
-					<th>OPINION</th>
+					<th>Image</th>
+					<th>Title</th>
+					<th>Opinion</th>
 					<th></th>
 					<th></th>
 				</thead>
 				<tbody>
-					<td>image</td>
+					<td><%= attachment_image_tag @user, :profile_image, size: "40x40", format: 'jpg', fallback: "no_img.jpg", class: "user-image" %></td>
 					<td><%= @books.title %></td>
 					<td><%= @books.body%></td>
-					<td><%= link_to "EDIT",  edit_book_path(@books.id), class: "edit-btn" %> </td>
-					<td><%= link_to "DELETE", book_path, method: :delete, class: "delete-btn", "deta-confilm" => "いっぱいお茶でもどうですか" %></td>
+					<% if @books.user_id == current_user.id%>
+						<td><%= link_to "Edit",  edit_book_path(@books.id), class: "edit-btn" %> </td>
+						<td><%= link_to "Delete", book_path, method: :delete, class: "delete-btn", "data-confirm" => "本当に削しますか？" %></td>
+					<% end %>
 				</tbody>
 			</table>
 		</div>

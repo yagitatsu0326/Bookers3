@@ -1,24 +1,24 @@
 <div class ="container">
 	<row>
-		<div class ="col-xs-5">
+		<div class ="col-xs-3">
 			<%= render "layouts/partial", {user: @user, book: @book } %>
 		</div>
-		<div class ="col-xs-7">
-			<h2>USERS</h2>
+		<div class ="col-xs-9">
+			<h2>Users</h2>
 			<table>
 				<thead>
 					<tr>
-						<th>IMAGE</th>
-						<th>NAME</th>
+						<th>Image</th>
+						<th>Name</th>
 						<th></th>
 					</tr>
 				</thead>
 				<% @users.each do |user| %>
 					<tbody>
 						<tr>
-							<td>image</td>
+							<td>image index</td>
 							<td><%= user.name %></td>
-							<td><a href = "/users/<%= user.id %>">SHOW</a></td>
+							<td><a href = "/users/<%= user.id %>">Show</a></td>
 						</tr>
 					</tbody>
 				<% end %>

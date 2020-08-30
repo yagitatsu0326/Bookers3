@@ -1,39 +1,36 @@
 
-<h2>USER INFO</h2>
-
-<table>
+<h2>User info</h2>
+<%= attachment_image_tag user, :profile_image, size: "100x100", format: 'jpg', fallback: "no_img.jpg", class: "user-image" %>
+<table class ="table">
 	<tbody>
 		<tr>
-			<th>NAME</th>
+			<th>Name</th>
 			<th><%= user.name %></th>
 		</tr>
 		<tr>
-			<th>INTRODUCTION</th>
+			<th>Inroduction</th>
 			<th><%= user.introduction %></th>
 		</tr>
 	</tbody>
 </table>
-<p>
-	<%= link_to edit_user_path(user.id), class: "edit-btn" do%>
+<div class ="row">
+	<%= link_to edit_user_path(user.id), class: "col-xs-12 btn-default" do%>
 		<span>ユーザ編集</span>
 	<% end %>
-</p>
-<h2>NEW BOOKS</h2>
+</div>
+<h2>New book</h2>
 <%= form_for(book) do |f| %>
-	<row>
-		<div class ="col-xs-12">
-			<p>TITLE</p>
-			<%= f.text_field :title %>
-			<p>OPNION</p>
-			<%= f.text_area :body %>
-		</div>
-	</row>
-	<row>
-		<div class ="col-xs-12">
-			<%= f.submit "CREATE BOOK" %>
-		</div>
-	</row>
-	<row>
+	<div class ="row">
+		<label>Title</<label>
+		<%= f.text_field :title ,class: "col-xs-12" %>
+	</div>
+	<div class ="row">
+		<label>Opinion</<label>
+		<%= f.text_area :body ,class: "col-xs-12" %>
+	</div>
+	<div class ="row">
+		<%= f.submit "Create Book",class: "col-xs-12" %>
+	</div>
 <% end %>
 
 

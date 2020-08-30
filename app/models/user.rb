@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   attachment :profile_image#refileにより画像をアップロードする為
 
-  validates :name, presence: true, length: {in: 2..50}
+  validates :name, presence: true, length: {in: 2..20}
   validates :introduction, length: {maximum: 50}
 
   has_many :books , dependent: :destroy #bookテーブルと紐つけ

@@ -1,15 +1,15 @@
 <div class ="container">
 	<row>
 		<div class ="col-xs-offset-3 col-xs-6">
-			<h2>EDITING BOOK</h2>
+			<h2>Editing Book</h2>
 			<%= form_for(@book) do |f| %>
 				<row>
 					<div class ="col-xs-12">
-						<p>TITLE</p>
+						<p>Title</p>
 						<%= f.text_field :title %>
-						<p>OPINION</p>
+						<p>Opinion</p>
 						<%= f.text_area :body %>
-						<P><%= f.submit "BOOK UPDATE", class: "update-btn" %></P>
+						<P><%= f.submit "Update book", class: "update-btn" %></P>
 				
 					</div>
 				</row>

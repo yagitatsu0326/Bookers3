@@ -16,7 +16,115 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.clearfix::after {
+  	content: "";
+  	display: block;
+  	clear: both;
+}
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+}
 .col-xs-12 {
 	width: 100%;
 }
+
+.header {
+	background-color: black;
+}
+.header-left{
+	float: left;
+
+}
+.header-logo {
+	color: #fff;
+}
+.header-right {
+	float: right;
+
+}
+li {
+	display: inline;
+	list-style: none;
+	text-align: center;
+	padding-right: 10px;
+}
+.header-list {
+	display: inline-block;
+	color: #fff;
+}
+
+
+table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+th,td {
+	padding: 8px;
+}
+.row {
+	width: 100%;
+}
+.field-row {
+	width: 100%;
+}
+
+
+.footer-logo {
+	float: right;
+}
+
+
+
+.login-btn {
+	width: 100%;
+	background-color:#5bc0de;
+	color: black;
+	padding: 6px 12px;
+	margin: 0 auto;
+	border-radius: 4px;
+	text-align: center;
+}
+.signup-btn {
+	width: 100%;
+	background-color:#5cb85c;
+	color: black;
+	padding: 6px 12px;
+	margin: 0 auto;
+	border-radius: 4px;
+	text-align: center;
+}
+.btn-default {
+	width: 100%;
+	border-color: #ccc;
+	color: black;
+	padding: 6px 12px;
+	margin: 0 auto;
+	border-radius: 4px;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
